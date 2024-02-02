@@ -1,0 +1,66 @@
+body {
+	background: linear-gradient(to bottom right, #e66465, #9198e5);
+	height: 100vh;
+	overflow: hidden;
+	font-family: "Courier New", Courier, monospace;
+}
+
+h1 {
+	font-size: 50px;
+	text-align: center;
+	margin: 80px 0 40px 0;
+}
+
+main {
+	gap: 50px;
+	justify-content: center;
+	height: 800px;
+}
+
+.flex {
+	display: flex;
+}
+
+.settings {
+	width: 400px;
+	flex-flow: column nowrap;
+	justify-content: center;
+	align-items: center;
+	gap: 40px;
+	font-size: 22px;
+}
+
+.settings > * {
+	width: 250px;
+}
+
+button {
+	font-size: 22px;
+	background-color: white;
+	font-family: inherit;
+	border: none;
+	height: 3em;
+}
+
+button:hover {
+	cursor: pointer;
+}
+
+input[type="color"] {
+	height: 150px;
+}
+
+#board {
+	width: 800px;
+	height: 800px;
+	flex-wrap: wrap;
+	background-color: rgba(255 255, 255, 0.5);
+}
+
+.board-pixel {
+	box-sizing: border-box;
+}
+
+.painted {
+	background-color: black;
+}

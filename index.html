@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="css/style.css" />
+		<script src="js/script.js" defer></script>
+		<title>Etch-A-Sketch</title>
+	</head>
+	<body>
+		<h1>Etch-A-Sketch</h1>
+		<main class="flex">
+			<div class="flex settings">
+				<div>
+					<label for="resolution">Choose the # of blocks</label><br />
+					<input type="range" name="resolution" id="resolution" min="1" max="128" value="16" />
+				</div>
+				<input type="color" id="color-input" />
+				<button id="color-random">Randomize colors</button>
+				<button id="eraser">Eraser</button>
+				<button id="clear-btn">Clear Canvas</button>
+			</div>
+			<div id="board" class="flex"></div>
+		</main>
+	</body>
+</html>
