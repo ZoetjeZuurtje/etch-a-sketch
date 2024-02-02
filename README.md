@@ -1,0 +1,1 @@
+Etch-A-Sketch is a small, fun game I made during the Odin Project.
