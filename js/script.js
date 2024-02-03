@@ -5,7 +5,7 @@ const settingsClear = document.querySelector("#clear-btn");
 const settingsColorRandom = document.querySelector("#color-random");
 let isErasing = false;
 let isColorRandom = false;
-settingsRange.addEventListener("mouseup", generateBoard);
+settingsRange.addEventListener("pointerup", generateBoard);
 settingsEraser.addEventListener("click", toggleEraser);
 settingsColorRandom.addEventListener("click", toggleRandomColor);
 settingsClear.addEventListener("click", generateBoard);
@@ -20,8 +20,8 @@ function generateBoard() {
 		let div = document.createElement("div");
 		div.style.width  = `${blockSize}%`;
 		div.style.height = `${blockSize}%`;
-		div.addEventListener("mousedown", changeStyle);
-		div.addEventListener("mouseover", changeStyle);
+		div.addEventListener("pointerdown", pointerHandler);
+		div.addEventListener("pointermove", pointerHandler);
 		div.classList.add("board-pixel");
 		board.appendChild(div);
 	}
@@ -59,12 +59,29 @@ function generateRandomColor() {
 	return `rgb(${red}, ${green}, ${blue})`;
 }
 
-function changeStyle(event) {
-	event.preventDefault();
+function pointerHandler(pointerEvent) {
+	pointerEvent.preventDefault();
+	let element = pointerEvent.target;
 
-	if (event.buttons !== 1) return; // Only do something when the Left Mouse Button is clicked
+	if (pointerEvent.pointerType == "touch") {
 
-	let element = event.target;
+		// Get the element under the touch
+		let x = event.pageX;
+		let y = event.pageY;
+		element = document.elementFromPoint(x, y);
+		// If the element is outside of the canvas, do nothing
+		if (!element.classList.contains("board-pixel")) return;
+		changeStyle(element);
+		return;
+	}
+
+	// Only do something when the Left Mouse Button is clicked
+	if (pointerEvent.buttons !== 1) return; 
+	changeStyle(element);
+}
+
+function changeStyle(element) {
+	
 	if (isErasing) {
 		element.style.backgroundColor = "transparent";
 		return;

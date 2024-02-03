@@ -56,9 +56,13 @@ input[type="color"] {
 	flex-wrap: wrap;
 	background-color: rgba(255, 255, 255, 0.5);
 	
+	/* To allow the user to resize the canvas */
 	scrollbar-width: none;
 	overflow: scroll;
 	resize: both;
+
+	/* To add support for mobile users */
+	touch-action: none;
 }
 
 .board-pixel {
