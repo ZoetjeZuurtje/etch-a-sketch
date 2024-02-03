@@ -12,15 +12,14 @@ settingsClear.addEventListener("click", generateBoard);
 
 function generateBoard() {
 	board.innerHTML = "";
-
-	let sideLength = board.clientWidth;
+	
 	let rowLength = getResolution();
-	const blockSize = sideLength / rowLength;
+	const blockSize = (1 / rowLength) * 100;
 
 	for (let i = 0; i < rowLength ** 2; i++) {
 		let div = document.createElement("div");
-		div.style.width = `${blockSize}px`;
-		div.style.height = `${blockSize}px`;
+		div.style.width  = `${blockSize}%`;
+		div.style.height = `${blockSize}%`;
 		div.addEventListener("mousedown", changeStyle);
 		div.addEventListener("mouseover", changeStyle);
 		div.classList.add("board-pixel");
