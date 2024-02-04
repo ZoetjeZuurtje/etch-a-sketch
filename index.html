@@ -1,27 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="css/style.css" />
-		<script src="js/script.js" defer></script>
-		<title>Etch-A-Sketch</title>
-	</head>
-	<body>
-		<h1>Etch-A-Sketch</h1>
-		<main class="flex">
-			<div class="flex settings">
-				<div>
-					<label for="resolution">Choose the # of blocks</label><br />
-					<input type="range" name="resolution" id="resolution" min="1" max="128" value="16" />
-				</div>
-				<input type="color" id="color-input" />
-				<button id="color-random">Randomize colors</button>
-				<button id="eraser">Eraser</button>
-				<button id="clear-btn">Clear Canvas</button>
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="css/style.css" />
+	<script src="js/script.js" defer></script>
+	<title>Etch-A-Sketch</title>
+</head>
+
+<body>
+	<h1>Etch-A-Sketch</h1>
+	<main class="flex">
+		<div class="flex settings">
+			<div class="setting-component">
+				<input type="range" name="resolution" id="resolution" min="1" max="128" value="16" />
+				<sup class="info">i</sup>
+				<br>
+				<label class="info-popup" for="resolution">The number of pixels to use on the X and Y axis</label>
 			</div>
-			<div id="board" class="flex"></div>
-		</main>
-	</body>
+			<div class="setting-component">
+				<input type="color" name="color-input" id="color-input" />
+				<sup class="info">i</sup>
+				<br>
+				<label class="info-popup" for="color-input">Click to select a color</label>
+			</div>
+			<div class="setting-component">
+				<button name="color-random" id="color-random">Randomize colors</button>
+				<sup class="info">i</sup>
+				<br>
+				<label class="info-popup" for="color-random">Click to toggle random color selection</label>
+			</div>
+			<div class="setting-component">
+				<button name="eraser" id="eraser">Eraser</button>
+				<sup class="info">i</sup>
+				<br>
+				<label class="info-popup" for="eraser">Click to toggle the Eraser</label>
+			</div>
+			<div class="setting-component">
+				<button name="clear-btn" id="clear-btn">Clear Canvas</button>
+				<sup class="info">i</sup>
+				<br>
+				<label class="info-popup" for="clear-btn">Click to clear the canvas</label>
+			</div>
+		</div>
+		<div id="board" class="flex"></div>
+	</main>
+</body>
+
 </html>

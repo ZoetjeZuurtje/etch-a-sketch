@@ -1,8 +1,11 @@
+* {
+	font-family: "Courier New", Courier, monospace;
+}
+
 body {
 	background: linear-gradient(to bottom right, #e66465, #9198e5);
 	height: 100vh;
 	overflow: hidden;
-	font-family: "Courier New", Courier, monospace;
 }
 
 h1 {
@@ -14,7 +17,6 @@ h1 {
 main {
 	gap: 50px;
 	justify-content: center;
-	height: 800px;
 }
 
 .flex {
@@ -22,32 +24,56 @@ main {
 }
 
 .settings {
-	width: 400px;
-	flex-flow: column nowrap;
-	justify-content: center;
-	align-items: center;
-	gap: 40px;
-	font-size: 22px;
+	flex-direction: column;
+	width: 200px;
 }
 
-.settings > * {
-	width: 250px;
-}
-
-button {
-	font-size: 22px;
+.setting-component {
 	background-color: white;
-	font-family: inherit;
-	border: none;
-	height: 3em;
+	padding: 10px;
+	border-bottom: black 1px solid;
 }
 
-button:hover {
+.setting-component:last-child {
+	border: none;
+}
+
+.setting-component > input, button {
+	width: 90%;
+}
+
+.setting-component > button {
+	border-radius: 3px;
+	box-shadow: 2px 2px;
+}
+
+.info {
+	/* size and font */
+	font-size: 12px;
+	text-align: center;
+	
+	/* location */
+	transform: translateY(-5px);
+	float: right;
+	
+	/* shape and background */
+	width: 1em;
+	border-radius: 50%;
+	background-color: lightblue;
+}
+
+.info:hover, button:hover, input:hover {
 	cursor: pointer;
 }
 
-input[type="color"] {
-	height: 150px;
+.info:hover ~ .info-popup {
+	display: inline;
+}
+
+.info-popup {
+	position: relative;
+	top: 10px;
+	display: none;
 }
 
 #board {
@@ -67,8 +93,4 @@ input[type="color"] {
 
 	/* To add support for mobile users */
 	touch-action: none;
-}
-
-.painted {
-	background-color: black;
 }

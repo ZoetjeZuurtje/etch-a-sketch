@@ -8,8 +8,11 @@ let isColorRandom = false;
 settingsRange.addEventListener("pointerup", generateBoard);
 settingsEraser.addEventListener("click", toggleEraser);
 settingsColorRandom.addEventListener("click", toggleRandomColor);
-settingsClear.addEventListener("click", generateBoard);
-
+settingsClear.addEventListener("pointerdown", () => {
+	generateBoard();
+	setButtonBackground(settingsClear, true);
+});
+settingsClear.addEventListener("pointerup", () => setButtonBackground(settingsClear, false));
 function generateBoard() {
 	board.innerHTML = "";
 	
@@ -47,7 +50,7 @@ function setButtonBackground(element, condition) {
 	if (condition) {
 		element.style.backgroundColor = "#a5ffbf";
 	} else {
-		element.style.backgroundColor = "white";
+		element.style.backgroundColor = "ButtonFace";
 	}
 }
 
