@@ -60,13 +60,13 @@ input[type="color"] {
 	scrollbar-width: none;
 	overflow: scroll;
 	resize: both;
-
-	/* To add support for mobile users */
-	touch-action: none;
 }
 
 .board-pixel {
 	box-sizing: border-box;
+
+	/* To add support for mobile users */
+	touch-action: none;
 }
 
 .painted {
